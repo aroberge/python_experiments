@@ -52,11 +52,15 @@ class ExperimentalImporter(object):
 
     def convert_experimental(self, name, source):
         '''Used to convert the source code, and create a new module
-           if the first line is of the form
+           if one of the lines is of the form
 
-               from __experimental__ import converter1 [, converter2, ...]
+               ^from __experimental__ import converter1 [, converter2, ...]
 
+           (where ^ indicates the beginning of a line)
            otherwise returns None and lets the normal import take place.
+           Note that this special code must be all on one physical line --
+           no continuation allowed by using parentheses or the
+           special \ end of line character.
 
            "converters" are modules which must contain a function
 
@@ -66,19 +70,23 @@ class ExperimentalImporter(object):
         '''
         global MAIN
         lines = source.split('\n')
-        first_line = lines[0]
 
-        if not from_experimental.match(first_line):
-            return None   # normal importer will handle this
+        for linenumber, line in enumerate(lines):
+            if from_experimental.match(line):
+                break
+        else:
+            return None  # normal importer will handle this
 
         # we started with: "from __experimental__ import converter1 [,...]"
-        first_line = from_experimental.sub(' ', first_line)
+        line = from_experimental.sub(' ', line)
         # we now have: "converter1 [,...]"
-        converters = first_line.replace(' ', '').split(',')
+        line = line.split("#")[0]    # remove any end of line comments
+        converters = line.replace(' ', '').split(',')
         # and now:  ["converter1", ...]
 
         # drop the "fake" import from the source code
-        source = '\n'.join(lines[1:])
+        del lines[linenumber]
+        source = '\n'.join(lines)
 
         for converter in converters:
             mod_name = __import__(converter)

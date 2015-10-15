@@ -1,4 +1,10 @@
-from __experimental__ import repeat_keyword, function_keyword
+'''This is not a valid Python module as it contains two
+   non-standard keywords:  repeat and function.  However,
+   by using a custom importer, and the presence of the special
+   import line below, these non-standard keywords will be converted
+   into valid Python syntax prior to execution.
+'''
+from __experimental__ import repeat_keyword, function_keyword  # magic! :-)
 
 
 def normal_syntax():

@@ -47,7 +47,8 @@ Version 4
 ---------
 
 This version is more robust in being able to deal with extra spaces
-in "from __experimental__ import" and is capable of running a script
+in "from __experimental__ import" and does not require this line
+to be the first one in the script; it is also capable of running a script
 as though it was run from the command line instead of just when
 it is imported.
 

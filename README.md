@@ -43,3 +43,17 @@ tokenize module to perform changes.  This ensures that
 code within comments (including docstrings) is unaffected which would
 be useful to preserve docstrings used in Python's help().
 
+Version 4
+---------
+
+This version is more robust in being able to deal with extra spaces
+in "from __experimental__ import" and is capable of running a script
+as though it was run from the command line instead of just when
+it is imported.
+
+To see it in action, execute:
+
+    python import_experimental.py test
+
+which will execute test.py after converting it from its non-standard
+syntax.

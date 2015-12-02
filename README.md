@@ -58,3 +58,14 @@ To see it in action, execute:
 
 which will execute test.py after converting it from its non-standard
 syntax.
+
+Version 5
+---------
+
+I've replaced __experimental__ by __nonstandard__.
+In this version, I implemented a French equivalent Python syntax.
+
+To see it in action, first, have a look at test.py and then execute:
+
+    python import_experimental.py test
+

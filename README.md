@@ -69,3 +69,18 @@ To see it in action, first, have a look at test.py and then execute:
 
     python import_nonstandard.py test
 
+Alternatively, execute:
+
+    python test_import.py
+
+The entire content of test_import.py is:
+
+    import import_nonstandard
+    import test
+
+
+By importing `import_nonstandard`, we modify the way that future modules
+are imported which, in this case, means that test.py will be have its
+"French Python" syntax translated to the normal Python syntax prior to
+being executed.
+

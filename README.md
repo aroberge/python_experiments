@@ -47,7 +47,7 @@ Version 4
 ---------
 
 This version is more robust in being able to deal with extra spaces
-in "from __experimental__ import" and does not require this line
+in "from `__experimental__` import" and does not require this line
 to be the first one in the script; it is also capable of running a script
 as though it was run from the command line instead of just when
 it is imported.
@@ -62,7 +62,7 @@ syntax.
 Version 5
 ---------
 
-I've replaced __experimental__ by __nonstandard__.
+I've replaced `__experimental__` by `__nonstandard__`.
 In this version, I implemented a French equivalent Python syntax.
 
 To see it in action, first, have a look at test.py and then execute:

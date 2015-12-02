@@ -67,5 +67,5 @@ In this version, I implemented a French equivalent Python syntax.
 
 To see it in action, first, have a look at test.py and then execute:
 
-    python import_experimental.py test
+    python import_nonstandard.py test
 

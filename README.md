@@ -84,3 +84,11 @@ are imported which, in this case, means that test.py will be have its
 "French Python" syntax translated to the normal Python syntax prior to
 being executed.
 
+Version 6
+---------
+
+This simply implement a "where" clause, which I would have liked to see
+used for type hinting as mentioned on my blog
+http://aroberge.blogspot.ca/2015/01/type-hinting-in-python-focus-on.html
+
+

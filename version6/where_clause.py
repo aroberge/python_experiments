@@ -44,4 +44,8 @@ def transform_source_code(text):
     return tokenize.untokenize(result)
 
 assert sample_out == transform_source_code(sample_in)
+
+# the transformation process may leave extra spaces at the end which
+# prevent an exact comparison from working.  Removing what are clearly
+# superfluous spaces, the following works.
 assert variable_out == transform_source_code(variable_in).replace(' ', '')

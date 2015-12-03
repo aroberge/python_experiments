@@ -19,12 +19,10 @@ variable_in = '''
 x = 3
 where:
     x: int
-y = 4
 '''
 
 variable_out = '''
 x=3
-y=4
 '''
 
 

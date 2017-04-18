@@ -91,4 +91,19 @@ This simply implement a "where" clause, which I would have liked to see
 used for type hinting as mentioned on my blog
 http://aroberge.blogspot.ca/2015/01/type-hinting-in-python-focus-on.html
 
+Version 7
+---------
+
+This demonstrate how to implement an increment operator (++) such that
+any line of the form 
+
+    identifier ++   # optional comment 
+
+would be transformed to become
+
+    identifier += 1
+
+For demonstration, have a look at the content of test_increment.py and then execute the following:
+
+    python import_experimental.py test_increment
 
